@@ -44,6 +44,10 @@ class Book {
         if (!(is_string($name) && is_string($author) && is_string($description))) {
             return false;
         }
+        
+        if (empty($name) && empty($author) && empty($description)) {
+            return false;
+        }
 
         $sql = "INSERT INTO books (nazwa, autor, opis) VALUES ('" . addslashes($name) . "', '" . addslashes($author) . "', '" . addslashes($description) . "' )";
 
@@ -62,6 +66,10 @@ class Book {
             return false;
         }
         if (!(is_string($name) && is_string($author) && is_string($description))) {
+            return false;
+        }
+        
+        if (empty($name) && empty($author) && empty($description)) {
             return false;
         }
 
